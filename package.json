@@ -1,0 +1,21 @@
+{
+  "name": "DungeonWorld",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/alliewebb/DungeonWorld.git",
+  "license": "MIT",
+  "scripts": {
+    "knex": "knex",
+    "dev": "nodemon index",
+    "start": "node index",
+    "test": "jest"},
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "knex": "^0.15.2",
+    "sqlite3": "^4.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  }
+}
