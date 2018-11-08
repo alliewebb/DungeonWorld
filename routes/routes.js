@@ -14,14 +14,16 @@ router.get('/', (req, res) => {
       })
   })
 
-router.post('/', (req, res) => {
-    const user = {
-        name: req.body.newname,
-    }
+router.get('/add', (req, res) => {
+    res.render('add')
+  })
+
+router.post('/add', (req, res) => {
+    const user = req.body.newuser
     db.addUser(user)
-        .then(() => {
-        res.redirect('/profile/:id')
-        })
+    .then(() => {
+        res.redirect('/')
+    })
 })
 
 router.get('/profile/:id', (req, res) => {
@@ -29,7 +31,6 @@ router.get('/profile/:id', (req, res) => {
     db.getUser(id).then(users => {
         res.render('profile', users)
     })
-    
   })
 
 module.exports = router

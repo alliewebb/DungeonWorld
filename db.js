@@ -17,6 +17,6 @@ function getUser (id, db = connection) {
   }
 
 function addUser (user, db = connection) {
-    db('users')
-    .insert(user)
+    return db('users')
+    .insert({name: user})
 }
