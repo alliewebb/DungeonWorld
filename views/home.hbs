@@ -1,12 +1,13 @@
-<h2>Already have a username? Log in here:</h2>
-<form action="" method="POST">
-    <input type="text" name="username" placeholder="username">
-    <input type="button" value="submit"Submit>
-</form>
+<h2>Click on your username below:</h2>
+<div>
+  {{#each users}}
+    <a href="/profile/{{id}}">{{name}}</a>
+  {{/each}}
+</div>
 <br>
 <br>
-<h2>New user? Fill out the following:</h2>
-<form action="" method="POST">
+<h2>New user?</h2>
+<form action="/" method="POST">
     <input type="text" name="newuser" placeholder="Pick a username">
     <input type="button" value="submit"Submit>
-</form>
+</form> 

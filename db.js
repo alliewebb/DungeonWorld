@@ -1,17 +1,22 @@
 const environment = process.env.NODE_ENV || 'development'
 const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
-const devDB = connection
 
 module.exports = {
     getUsers: getUsers,
-    getUser: getUser
+    getUser: getUser,
+    addUser: addUser
 }
 
 function getUsers (db = connection) {
     return db('users').select()
   }
   
-  function getUser (id, db = connection) {
+function getUser (id, db = connection) {
     return db('users').where('id', id).first()
   }
+
+function addUser (user, db = connection) {
+    db('users')
+    .insert(user)
+}
