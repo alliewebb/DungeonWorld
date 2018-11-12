@@ -1,0 +1,49 @@
+<h1>Character Sheet for {{character.char_name}}, the {{character.class}}</h1>
+
+<p>Your max HP is: {{character.constitution}} + 8</p>
+
+<form name='initial' action='/character/{{character.id}}' method='POST'>
+<div>
+    <label for="HP">HP:</label>
+    <input type="text" id="HP" name="HP" placeholder="{{character.hp}}" />
+  </div>
+  <div>
+    <label for="level">Level:</label>
+    <input type="integer" id="level" name="level" placeholder="{{character.level}}" />
+  </div>
+  <div>
+    <label for="armour">Armour:</label>
+    <input type="integer" id="armour" name="armour" placeholder="{{character.armour}}"></textarea>
+  </div>
+   <div>
+    <label for="damage">Damage:</label>
+    <input type="text" id="damage" name="damage" placeholder="{{character.damage}}"></textarea>
+  </div>
+</form>
+
+<form name='stats' action='/character/{{character.id}}' method='POST'>
+    <div>
+        <label for="strength">Strength:</label>
+        <input type="integer" id="strength" name="strength" placeholder="{{character.strength}}"/>
+    </div>
+    <div>
+        <label for="strength">Dexterity:</label>
+        <input type="integer" id="dexterity" name="dexterity" placeholder="{{character.dexterity}}"/>
+    </div>
+    <div>
+        <label for="strength">Constitution:</label>
+        <input type="integer" id="constitution" name="constitution" placeholder="{{character.constitution}}"/>
+    </div>
+    <div>
+        <label for="strength">Intelligence:</label>
+        <input type="integer" id="intelligence" name="intelligence" placeholder="{{character.intelligence}}"/>
+    </div>
+    <div>
+        <label for="strength">Wisdom:</label>
+        <input type="integer" id="wisdom" name="wisdom" placeholder="{{character.wisdom}}"/>
+    </div>
+    <div>
+        <label for="strength">Charisma:</label>
+        <input type="integer" id="charisma" name="charisma" placeholder="{{character.charisma}}"/>
+    </div>
+</form>

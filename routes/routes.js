@@ -28,9 +28,20 @@ router.post('/add', (req, res) => {
 
 router.get('/profile/:id', (req, res) => {
     const id = Number(req.params.id)
-    db.getUser(id).then(users => {
-        res.render('profile', users)
+    db.getCharacters(id).then(characters => {
+        db.getUser(id).then(users => {
+            res.render('profile', {characters, users})
+        })
     })
-  })
+})
+
+router.get('/character/:id', (req, res) => {
+    const id = Number(req.params.id)
+    db.getCharacter(id).then(character => {
+        res.render('character', {character})
+    })
+})
+
+
 
 module.exports = router
