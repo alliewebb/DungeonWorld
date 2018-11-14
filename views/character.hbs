@@ -27,11 +27,8 @@
   </div>
    <div>
     <label for="damage">Damage:</label>
-    <input type="text" id="damage" name="damage" value="{{character.damage}}"></textarea>
+    <input type="integer" id="damage" name="damage" value="{{character.damage}}"></textarea>
   </div>
-</form>
-
-<form name='stats' action='/character/{{character.id}}' method='POST'>
     <div>
         <label for="strength">Strength:</label>
         <input type="integer" id="strength" name="strength" value="{{character.strength}}"/>

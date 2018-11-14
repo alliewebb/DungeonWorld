@@ -10,6 +10,7 @@ module.exports = {
     getCharacter: getCharacter,
     getStrength: getStrength,
     updateCharacter: updateCharacter,
+    createCharacter: createCharacter
 }
 
 function getUsers (db = connection) {
@@ -45,3 +46,7 @@ function getStrength (stat, db = connection) {
 function updateCharacter (id, character, db = connection) {
     return db('characters').where('id', id).update(character)
   }
+
+function createCharacter (db = connection) {
+    return db('characters').insert()
+}
