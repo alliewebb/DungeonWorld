@@ -1,6 +1,6 @@
 <h1>Welcome, {{users.name}}</h1>
 <h3>Choose the character you would like to play with today:</h3>
 
-
+<a href='/character/{{characters.id}}' >{{characters.char_name}}</a>
 
 <input type="button" value="Create a New Character" onclick="@("window.location.href='" + @Url.Action("actionName", "controllerName") + "'");" />

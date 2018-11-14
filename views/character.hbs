@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{character.char_name}}</title>
+    <link rel="stylesheet" href="../public/styles/main.css">
+</head>
+<body>
 <h1>Character Sheet for {{character.char_name}}, the {{character.class}}</h1>
 
 <p>Your max HP is: {{character.constitution}} + 8</p>
@@ -5,45 +15,49 @@
 <form name='initial' action='/character/{{character.id}}' method='POST'>
 <div>
     <label for="HP">HP:</label>
-    <input type="text" id="HP" name="HP" placeholder="{{character.hp}}" />
+    <input type="text" id="HP" name="HP" value="{{character.hp}}" />
   </div>
   <div>
     <label for="level">Level:</label>
-    <input type="integer" id="level" name="level" placeholder="{{character.level}}" />
+    <input type="integer" id="level" name="level" value="{{character.level}}" />
   </div>
   <div>
     <label for="armour">Armour:</label>
-    <input type="integer" id="armour" name="armour" placeholder="{{character.armour}}"></textarea>
+    <input type="integer" id="armour" name="armour" value="{{character.armour}}"></textarea>
   </div>
    <div>
     <label for="damage">Damage:</label>
-    <input type="text" id="damage" name="damage" placeholder="{{character.damage}}"></textarea>
+    <input type="text" id="damage" name="damage" value="{{character.damage}}"></textarea>
   </div>
 </form>
 
 <form name='stats' action='/character/{{character.id}}' method='POST'>
     <div>
         <label for="strength">Strength:</label>
-        <input type="integer" id="strength" name="strength" placeholder="{{character.strength}}"/>
+        <input type="integer" id="strength" name="strength" value="{{character.strength}}"/>
     </div>
     <div>
         <label for="strength">Dexterity:</label>
-        <input type="integer" id="dexterity" name="dexterity" placeholder="{{character.dexterity}}"/>
+        <input type="integer" id="dexterity" name="dexterity" value="{{character.dexterity}}"/>
     </div>
     <div>
         <label for="strength">Constitution:</label>
-        <input type="integer" id="constitution" name="constitution" placeholder="{{character.constitution}}"/>
+        <input type="integer" id="constitution" name="constitution" value="{{character.constitution}}"/>
     </div>
     <div>
         <label for="strength">Intelligence:</label>
-        <input type="integer" id="intelligence" name="intelligence" placeholder="{{character.intelligence}}"/>
+        <input type="integer" id="intelligence" name="intelligence" value="{{character.intelligence}}"/>
     </div>
     <div>
         <label for="strength">Wisdom:</label>
-        <input type="integer" id="wisdom" name="wisdom" placeholder="{{character.wisdom}}"/>
+        <input type="integer" id="wisdom" name="wisdom" value="{{character.wisdom}}"/>
     </div>
     <div>
         <label for="strength">Charisma:</label>
-        <input type="integer" id="charisma" name="charisma" placeholder="{{character.charisma}}"/>
+        <input type="integer" id="charisma" name="charisma" value="{{character.charisma}}"/>
     </div>
+    <input type="submit"Submit/>
 </form>
+</body>
+</html>
+

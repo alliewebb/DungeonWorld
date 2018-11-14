@@ -8,7 +8,8 @@ module.exports = {
     addUser: addUser,
     getCharacters: getCharacters,
     getCharacter: getCharacter,
-    getStrength: getStrength
+    getStrength: getStrength,
+    updateCharacter: updateCharacter,
 }
 
 function getUsers (db = connection) {
@@ -25,7 +26,7 @@ function addUser (user, db = connection) {
 }
 
 function getCharacters (id, db = connection) {
-    return db('characters').where('user_id', id).select()
+    return db('characters').where('user_id', id).first()
 }
 
 function getCharacter (id, db = connection) {
@@ -40,3 +41,7 @@ function getStrength (stat, db = connection) {
             character.strengthMod === "+2"
     })
 }
+
+function updateCharacter (id, character, db = connection) {
+    return db('characters').where('id', id).update(character)
+  }

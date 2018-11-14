@@ -42,6 +42,30 @@ router.get('/character/:id', (req, res) => {
     })
 })
 
+router.post('/character/:id', (req, res) => {
+    const character = {
+      char_name: req.body.name,
+      class: req.body.class,
+      level: req.body.level,
+      xp: req.body.xp,
+      max_hp: req.body.maxHp,
+      hp: req.body.HP,
+      level: req.body.level,
+      armour: req.body.armour,
+      damage: req.body.damage,
+      strength: req.body.strength,
+      dexterity: req.body.dexterity,
+      constitution: req.body.constitution,
+      intelligence: req.body.intelligence,
+      wisdom: req.body.wisdom,
+      charisma: req.body.charisma
+    }
+    db.updateCharacter(req.params.id, character)
+      .then(() => {
+        res.redirect('/')
+      })
+  })
+
 
 
 module.exports = router
