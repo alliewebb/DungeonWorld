@@ -30,6 +30,7 @@ router.get('/profile/:id', (req, res) => {
     const id = Number(req.params.id)
     db.getCharacters(id).then(characters => {
         db.getUser(id).then(users => {
+            console.log(characters)
             res.render('profile', {characters, users})
         })
     })
@@ -38,7 +39,8 @@ router.get('/profile/:id', (req, res) => {
 router.get('/character/:id', (req, res) => {
     const id = Number(req.params.id)
     db.getCharacter(id).then(character => {
-        res.render('character', {character})
+        console.log(character)
+        res.render('character', character[0])
     })
 })
 
@@ -66,6 +68,23 @@ router.post('/character/:id', (req, res) => {
       })
   })
 
+router.get('/profile/:id/add', (req, res) => {
+    const id = Number(req.params.id)
+    db.getUser(id).then(user => {
+        res.render('newCharacter', {user})
+    })
+})
 
-
+router.post('/profile/:id/add', (req, res) => {
+    const id = Number(req.params.id)
+    const character = {
+        user_id: id,
+        char_name: req.body.name,
+        class: req.body.class
+    }
+    db.createCharacter(character)
+    .then(() => {
+        res.redirect('/')
+        })
+})
 module.exports = router

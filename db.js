@@ -27,11 +27,11 @@ function addUser (user, db = connection) {
 }
 
 function getCharacters (id, db = connection) {
-    return db('characters').where('user_id', id).first()
+    return db('characters').where('user_id', id)
 }
 
 function getCharacter (id, db = connection) {
-    return db('characters').where('id', id).first()
+    return db('characters').where('id', id)
 }
 
 function getStrength (stat, db = connection) {
@@ -47,6 +47,6 @@ function updateCharacter (id, character, db = connection) {
     return db('characters').where('id', id).update(character)
   }
 
-function createCharacter (db = connection) {
-    return db('characters').insert()
+function createCharacter (character, db = connection) {
+    return db('characters').insert(character)
 }
