@@ -8,9 +8,10 @@ module.exports = {
     addUser: addUser,
     getCharacters: getCharacters,
     getCharacter: getCharacter,
-    getStrength: getStrength,
     updateCharacter: updateCharacter,
-    createCharacter: createCharacter
+    createCharacter: createCharacter,
+    deleteCharacter: deleteCharacter,
+    findStat: findStat
 }
 
 function getUsers (db = connection) {
@@ -34,19 +35,30 @@ function getCharacter (id, db = connection) {
     return db('characters').where('id', id)
 }
 
-function getStrength (stat, db = connection) {
-    return db('characters')
-    .where('id', id)
-    .then((character) => {
-        if (character.strength === 16)
-            character.strengthMod === "+2"
-    })
-}
-
 function updateCharacter (id, character, db = connection) {
     return db('characters').where('id', id).update(character)
   }
 
 function createCharacter (character, db = connection) {
     return db('characters').insert(character)
+}
+
+function deleteCharacter (id, db = connection) {
+    return db('characters').where('id', id).del()
+}
+
+function findStat (id, stat, db = connection) {
+    return db('characters')
+    .where('id', id)
+    .then(() => {
+        if (stat === 16) {
+            mod === 2
+        } else if (stat >= 13) {
+            mod === 1
+        } else if (stat >= 9) {
+            mod === 0
+        } else if (mod === 8) {
+            mod === (-1)
+        }
+    })
 }

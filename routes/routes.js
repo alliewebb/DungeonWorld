@@ -39,7 +39,6 @@ router.get('/profile/:id', (req, res) => {
 router.get('/character/:id', (req, res) => {
     const id = Number(req.params.id)
     db.getCharacter(id).then(character => {
-        console.log(character)
         res.render('character', character[0])
     })
 })
@@ -87,4 +86,20 @@ router.post('/profile/:id/add', (req, res) => {
         res.redirect('/')
         })
 })
+
+router.get('/character/:id/delete', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        console.log(character[0])
+    res.render('delete', character[0])
+  })
+})
+
+router.post('/character/:id/delete', (req, res) => {
+    db.deleteCharacter(Number(req.params.id))
+    .then(() => {
+        res.redirect('/')
+    })
+})
+
 module.exports = router
