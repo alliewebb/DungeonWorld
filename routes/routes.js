@@ -102,4 +102,97 @@ router.post('/character/:id/delete', (req, res) => {
     })
 })
 
+router.get('/character/:id/:stat/hack', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        let mod = db.findStat(Number(req.params.stat))
+        let roll = db.dieRoll(6)
+        let roll2 = db.dieRoll(6)
+        let sum = roll + roll2 + mod
+            console.log(mod)
+            res.render('hack', {character, mod, roll, roll2, sum})
+        })
+    })
+
+router.get('/character/:id/:stat/volley', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        let mod = db.findStat(Number(req.params.stat))
+        let roll = db.dieRoll(6)
+        let roll2 = db.dieRoll(6)
+        let sum = roll + roll2 + mod
+            console.log(mod)                
+            res.render('volley', {character, mod, roll, roll2, sum})
+        })
+})
+
+router.get('/character/:id/:stat/parley', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        let mod = db.findStat(Number(req.params.stat))
+        let roll = db.dieRoll(6)
+        let roll2 = db.dieRoll(6)
+        let sum = roll + roll2 + mod
+            console.log(mod)                
+            res.render('volley', {character, mod, roll, roll2, sum})
+        })
+})
+
+router.get('/character/:id/:stat/defy', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        let mod = db.findStat(Number(req.params.stat))
+        let roll = db.dieRoll(6)
+        let roll2 = db.dieRoll(6)
+        let sum = roll + roll2 + mod
+            console.log(mod)                
+            res.render('defy', {character, mod, roll, roll2, sum})
+        })
+})
+
+router.get('/character/:id/:stat/defend', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        let mod = db.findStat(Number(req.params.stat))
+        let roll = db.dieRoll(6)
+        let roll2 = db.dieRoll(6)
+        let sum = roll + roll2 + mod
+            console.log(mod)                
+            res.render('defy', {character, mod, roll, roll2, sum})
+        })
+})
+
+router.get('/character/:id/:stat/discern', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        let mod = db.findStat(Number(req.params.stat))
+        let roll = db.dieRoll(6)
+        let roll2 = db.dieRoll(6)
+        let sum = roll + roll2 + mod
+            console.log(mod)                
+            res.render('discern', {character, mod, roll, roll2, sum})
+        })
+})
+
+router.get('/character/:id/:stat/lore', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        let mod = db.findStat(Number(req.params.stat))
+        let roll = db.dieRoll(6)
+        let roll2 = db.dieRoll(6)
+        let sum = roll + roll2 + mod
+            console.log(mod)                
+            res.render('lore', {character, mod, roll, roll2, sum})
+        })
+})
+
+router.get('/character/:id/aid', (req, res) => {
+    db.getCharacter(Number(req.params.id))
+    .then(character => {
+        let roll = db.dieRoll(6)
+        let roll2 = db.dieRoll(6)
+        let sum = roll + roll2               
+            res.render('aid', {character, roll, roll2, sum})
+        })
+})
 module.exports = router

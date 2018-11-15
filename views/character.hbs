@@ -56,6 +56,48 @@
     <input type="submit"Submit/>
     <a href="/character/{{id}}/delete">Delete</a>
 </form>
+<div>
+    <h4>HACK AND SLASH</h4>
+    <a href='/character/{{id}}/{{strength}}/hack' >Attack an enemy in melee (+STR)</a>
+</div>
+<div>
+    <h4>VOLLEY</h4>
+    <a href='/character/{{id}}/{{dexterity}}/volley' >Shoot at an enemy at range (+DEX)</a>
+</div>
+<div>
+    <h4>PARLEY</h4>
+    <a href='/character/{{id}}/{{charisma}}/parley' >Have leverage on a GM character and manipulate them (+CHA)</a>
+</div>
+<div>
+    <h4>DEFY DANGER</h4>
+    <p>Act despite an imminent threat 
+        <ul>
+            <li><a href='/character/{{id}}/{{strength}}/defy' >by powering through (+STR)</a></li>
+            <li><a href='/character/{{id}}/{{dexterity}}/defy' >by getting out of the way or acting fast (+DEX)</a></li>
+            <li><a href='/character/{{id}}/{{constitution}}/defy' >by enduring (+CON)</a></li>
+            <li><a href='/character/{{id}}/{{intelligence}}/defy' >with quick thinking (+INT)</a></li>
+            <li><a href='/character/{{id}}/{{wisdom}}/defy' >through mental fortitude (+WIS)</a></li>
+            <li><a href='/character/{{id}}/{{charisma}}/defy' >sing charm and social grace (+CHA)</a></li>
+        </ul>
+        
+    </p>
+</div>
+<div>
+    <h4>DEFEND</h4>
+    <p><a href='/character/{{id}}/{{constitution}}/defend' >Stand in defense of a person, item, or location (+CON)</a></p>
+</div>
+<div>
+    <h4>DISCERN REALITIES</h4>
+    <p><a href='/character/{{id}}/{{wisdom}}/discern' >Closely study a situation or person (+WIS)</a></p>
+</div>
+<div>
+    <h4>SPOUT LORE</h4>
+    <p><a href='/character/{{id}}/{{intelligence}}/lore' >Consult your accumulated knowledge about something (+INT)</a></p>
+</div>
+<div>
+    <h4>AID OR INTERFERE</h4>
+    <p><a href='/character/{{id}}/aid' >Help or hinder someone you have a bond with (+BOND)</a></p>
+</div>
 </body>
 </html>
 

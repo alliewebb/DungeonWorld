@@ -11,7 +11,8 @@ module.exports = {
     updateCharacter: updateCharacter,
     createCharacter: createCharacter,
     deleteCharacter: deleteCharacter,
-    findStat: findStat
+    findStat: findStat,
+    dieRoll: dieRoll
 }
 
 function getUsers (db = connection) {
@@ -47,18 +48,20 @@ function deleteCharacter (id, db = connection) {
     return db('characters').where('id', id).del()
 }
 
-function findStat (id, stat, db = connection) {
-    return db('characters')
-    .where('id', id)
-    .then(() => {
-        if (stat === 16) {
-            mod === 2
+let mod = 0
+function findStat (stat) {
+        if (stat >= 16) {
+            mod = 2
         } else if (stat >= 13) {
-            mod === 1
+            mod = 1
         } else if (stat >= 9) {
-            mod === 0
-        } else if (mod === 8) {
-            mod === (-1)
+            mod = 0
+        } else if (mod = 8) {
+            mod = -1
         }
-    })
+        return mod
+    }
+
+function dieRoll(max) {
+    return Math.floor(Math.random() * Math.floor(max)) + 1
 }
