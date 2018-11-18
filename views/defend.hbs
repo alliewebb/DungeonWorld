@@ -1,20 +1,50 @@
-<p>First die roll: {{roll}}<br>
-    Second die roll: {{roll2}}<br>
-    Modifier: {{mod}}</p>
-<p>Your total roll is: <h2>{{sum}}</h2></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-<h3>10+</h3>
-<p>Hold 3</p>
-<h3>7-9</h3>
-<p>Hold 1</p>
-<h3>6 and below</h3>
-<p>You fail. Mark experience</p>
-
-<p>So long as you stand in defense, when you or the thing you defend is attacked you may spend hold, 1 for 1, to choose an option:
-    <ul>
-        <li>Redirect an attack from the thing you defend to yourself</li>
-        <li>Halve the attack's effect or damage</li>
-        <li>Open up the attacker to an ally giving that ally +1 forward against the attacker</li>
-        <li>Deal damage to that attacker equal to your level</li>
-    </ul>
-</p>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <title>Add a Character</title>
+</head>
+<body>
+    
+ <div class="row">
+    <h4 class="center light-green darken-3">Defend</h4>
+    <div class="col s2">
+      First die roll: <h4>{{roll}} +</h4>
+    </div>
+    <div class="col s2">
+        Second die roll: <h4>{{roll2}} + </h4><br><br>
+        Your total roll: <h1>{{sum}}</h1>
+    </div>
+    <div class="col s2">
+        Modifier: <h4>{{mod}}</h4></p>
+    </div>
+    <div class="col s4">
+        <p>So long as you stand in defense, when you or the thing you defend is attacked you may spend hold to choose an option:
+        <ul>
+            <li>- Redirect an attack from the thing you defend to yourself</li>
+            <li>- Halve the attack's effect or damage</li>
+            <li>- Open up the attacker to an ally giving that ally +1 forward against the attacker</li>
+            <li>- Deal damage to that attacker equal to your level</li>
+        </ul>
+        </p>
+        <h4 class="indigo lighten-2">10+</h4>
+            <p>Hold 3</p>
+        <h4 class="indigo lighten-2">7-9</h4>
+            <p>Hold 1</p>
+        <h4 class="indigo lighten-2">6 and below</h4>
+            <p>You fail. Mark experience</p>
+    </div>
+ </div>  
+ <div class="center">
+    <a href="/character/{{id}}/" class="btn indigo lighten-2 ">Character Sheet</a>
+  </div>
+  </body>

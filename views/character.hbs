@@ -1,103 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{char_name}}</title>
-    <link rel="stylesheet" href="../public/styles/main.css">
-</head>
-<body>
-<h1>Character Sheet for {{char_name}}, the {{class}}</h1>
-
-<p>Your max HP is: {{constitution}} + 8</p>
+<h3 class="center black white-text">Character Sheet</h3>
 
 <form name='initial' action='/character/{{id}}' method='POST'>
-<div>
-    <label for="HP">HP:</label>
-    <input type="text" id="HP" name="HP" value="{{hp}}" />
-  </div>
-  <div>
-    <label for="level">Level:</label>
-    <input type="integer" id="level" name="level" value="{{level}}" />
-  </div>
-  <div>
-    <label for="armour">Armour:</label>
-    <input type="integer" id="armour" name="armour" value="{{armour}}"></textarea>
-  </div>
-   <div>
-    <label for="damage">Damage:</label>
-    <input type="integer" id="damage" name="damage" value="{{damage}}"></textarea>
-  </div>
-    <div>
-        <label for="strength">Strength:</label>
-        <input type="integer" id="strength" name="strength" value="{{strength}}"/>
+<div class="row">
+    <div class="col s4">
+        <div>
+            <label for="hp">HP  (Max HP CON + 8):</label><br>
+            <input type="integer" id="hp" name="hp" value="{{hp}}"/>
+        </div>
+        <div>
+            <label for="xp">XP:</label><br>
+            <input type="integer" id="xp" name="xp" value="{{xp}}"/>
+        </div>
+        <div>
+            <label for="level">Level:</label><br>
+            <input type="integer" id="level" name="level" value="{{level}}"/>
+        </div>
+        <div>
+            <label for="armour">Armour:</label><br>
+            <input type="integer" id="armour" name="armour" value="{{armour}}"/>
+        </div>
+        <div>
+            <label for="damage">Damage:</label><br>
+            <input type="integer" id="damage" name="damage" value="{{damage}}"/>
+        </div>
+        <div>
+            <label for="race">Race:</label><br>
+            <input type="integer" id="race" name="race" value="{{race}}"/>
+        </div>
     </div>
-    <div>
-        <label for="strength">Dexterity:</label>
-        <input type="integer" id="dexterity" name="dexterity" value="{{dexterity}}"/>
+    <div class="col s4">
+        <div>
+            <label for="strength">Strength:</label><br>
+            <input type="integer" id="strength" name="strength" value="{{strength}}"/>
+        </div>
+        <div>
+            <label for="strength">Dexterity:</label><br>
+            <input type="integer" id="dexterity" name="dexterity" value="{{dexterity}}"/>
+        </div>
+        <div>
+            <label for="strength">Constitution:</label><br>
+            <input type="integer" id="constitution" name="constitution" value="{{constitution}}"/>
+        </div>
+        <div>
+            <label for="strength">Intelligence:</label><br>
+            <input type="integer" id="intelligence" name="intelligence" value="{{intelligence}}"/>
+        </div>
+        <div>
+            <label for="strength">Wisdom:</label><br>
+            <input type="integer" id="wisdom" name="wisdom" value="{{wisdom}}"/>
+        </div>
+        <div>
+            <label for="strength">Charisma:</label><br>
+            <input type="integer" id="charisma" name="charisma" value="{{charisma}}"/>
+        </div>
     </div>
-    <div>
-        <label for="strength">Constitution:</label>
-        <input type="integer" id="constitution" name="constitution" value="{{constitution}}"/>
+    <div class="col s4">
+        <div class="input-field">
+          <textarea id="items" name="items" class="materialize-textarea" >{{items}}</textarea>
+          <label for="items">Items and Load:</label>
+        </div>
+        <div class="input-field">
+          <textarea id="bonds" name = "bonds" class="materialize-textarea">{{bonds}}</textarea>
+          <label for="bonds">Bonds:</label>
+        </div>
+        <div class="input-field">
+          <textarea id="alignment" name = "alignment" class="materialize-textarea">{{alignment}}</textarea>
+          <label for="alignment">Alignment:</label>
+        </div>
     </div>
-    <div>
-        <label for="strength">Intelligence:</label>
-        <input type="integer" id="intelligence" name="intelligence" value="{{intelligence}}"/>
-    </div>
-    <div>
-        <label for="strength">Wisdom:</label>
-        <input type="integer" id="wisdom" name="wisdom" value="{{wisdom}}"/>
-    </div>
-    <div>
-        <label for="strength">Charisma:</label>
-        <input type="integer" id="charisma" name="charisma" value="{{charisma}}"/>
-    </div>
-    <input type="submit"Submit/>
-    <a href="/character/{{id}}/delete">Delete</a>
+</div>
+<div class="center">
+    <input class="btn black" type="submit"value="Save Changes"/>
+    <a href="/character/{{id}}/delete" class="btn black">Delete Character</a>
+</div>
 </form>
-<div>
-    <h4>HACK AND SLASH</h4>
-    <a href='/character/{{id}}/{{strength}}/hack' >Attack an enemy in melee (+STR)</a>
+
+<hr>
+
+<h4>Basic Moves</h4>
+<div class="row">
+    <div class="col s6">
+        <div>
+            <p>HACK AND SLASH:<br> <a href='/character/{{id}}/{{strength}}/hack' class="btn black">Attack an enemy in melee (+STR)</a></p>
+        </div>
+        <div>
+            <p>VOLLEY:<br><a href='/character/{{id}}/{{dexterity}}/volley' class="btn black">Shoot at an enemy at range (+DEX)</a></p>
+        </div>
+        <div>
+            <p>PARLEY:<br> <a href='/character/{{id}}/{{charisma}}/parley' class="btn black">Have leverage and manipulate (+CHA)</a></p>
+        </div>
+        <div>
+            <p>DEFEND:<br> <a href='/character/{{id}}/{{constitution}}/defend' class='btn black'>Stand in defense (+CON)</a></p>
+        </div>
+        <div>
+            <p>DISCERN REALITIES:<br> <a href='/character/{{id}}/{{wisdom}}/discern' class="btn black">Closely study a situation or person (+WIS)</a></p>
+        </div>
+    </div>
+    <div class="col s6">
+        <div>
+            <p>SPOUT LORE:<br><a href='/character/{{id}}/{{intelligence}}/lore' class="btn black">Consult your knowledge (+INT)</a></p>
+        </div>
+        <div>
+            <p>AID OR INTERFERE:<br><a href='/character/{{id}}/aid' class="btn black">Help or hinder someone (+BOND)</a></p>
+        </div>
+        <div>
+            <p>DEFY DANGER: 
+                <ul>
+                    <li><a href='/character/{{id}}/{{strength}}/defy' class="btn black" >by powering through (+STR)</a></li>
+                    <li><a href='/character/{{id}}/{{dexterity}}/defy' class="btn black">by acting fast (+DEX)</a></li>
+                    <li><a href='/character/{{id}}/{{constitution}}/defy' class="btn black">by enduring (+CON)</a></li>
+                    <li><a href='/character/{{id}}/{{intelligence}}/defy' class="btn black">with quick thinking (+INT)</a></li>
+                    <li><a href='/character/{{id}}/{{wisdom}}/defy' class="btn black">through mental fortitude (+WIS)</a></li>
+                    <li><a href='/character/{{id}}/{{charisma}}/defy' class="btn black">sing charm and social grace (+CHA)</a></li>
+                </ul>
+            </p>
+        </div>
+    </div>
 </div>
-<div>
-    <h4>VOLLEY</h4>
-    <a href='/character/{{id}}/{{dexterity}}/volley' >Shoot at an enemy at range (+DEX)</a>
+
+
+<hr>
+<h4>Special Moves</h4>
+<div class="row">
+    <div class="col s6">
+        <div>
+            <p>ENCUMBRANCE:<br>
+            <div class="card black">
+                <div class="card-content white-text">
+                    When you make a move while carrying weight up to or equal to Load, you're fine. When you make a move while carrying weight equal to load+1 or load+2, you take -1. When you make a move while carrying weight greater than load+2, you have a choice: drop at least 1 weight and roll at -1, or automatically fail</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>MAKE CAMP:<br>
+            <div class="card black">
+                <div class="card-content white-text">
+                    When you settle in to rest consume a ration. If you're somewhere dangerous decide the watch order as well. If you have enough XP you may level up. When you wake from at least a few uninterrupted hours of sleep heal damage equal to half your max HP</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>TAKE WATCH:<br><a href='/character/{{id}}/{{wisdom}}/watch' class="btn black">Someone approaches while on watch (+WIS)</a></p>
+        </div>
+        <div>
+            <p>LEVEL UP:<br> 
+            <div class="card black">
+                <div class="card-content white-text">
+                    When you have downtime (hours or days) and XP equal to (or greater than) your current level +7, subtract your current level + 7 from your XP, increase your level by 1, and choose a new advanced move from your class. If you are the wizard, you also get to add a new spell to your spellbook. <br>
+                    Choose one of your stats and increase it by 1. Changing your constitution increases your maximum and current HP. Ability scores can't go higher than 18.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>END OF SESSION:<br> 
+            <div class="card black">
+                <div class="card-content white-text">
+                    When you reach end of a session, choose one of your bonds that you feel is resolved(completely explored, no longer relevant, or otherwise). Ask the player of the character you have the bond with if the agree. If they do, mark XP and write a new bond with whomever you wish. <br>
+                    Look at your alignment. If you fulfilled that alignment at least once this session, mark XP. Then answer these three questions as a group:
+                    <ul>
+                        <li>- Did we learn something new and important about the world?</li>
+                        <li>- Did we overcome a notable moster or enemy?</li>
+                        <li>- Did we loot a memorable treasure?</li>
+                    </ul>
+                    For each "yes" answer everyone marks XP.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s6">
+        <div>
+            <p>CAROUSE (costs 100 coin. Roll +extra 100s of coins spent):<br><a href='/character/{{id}}/carouse' class="btn black">Return triumphant, throw a party (+COIN)</a></p>
+        </div>
+        <div>
+            <p>SUPPLY:<br><a href='/character/{{id}}/{{charisma}}/supply' class="btn black">Buy something special (+CHA)</a></p>
+        </div>
+        <div>
+            <p>RECOVER:<br>
+            <div class="card black">
+                <div class="card-content white-text">
+                    When you do nothing but rest in comfort and safety after a day of rest you recover all your HP. After three days of rest you remove one debility of your choice. If you're under the care of a healer, you heal a debility for every two days of rest instead.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>RECRUIT:<br>
+            <div class="card black">
+                <div class="card-content white-text">
+                    When you put out word that you're looking to hire help, roll. If you make it known: 
+                    <ul>
+                        <li>that your pay is generous, take + 1</li>
+                        <li>what you're setting out to do, take +1</li>
+                        <li>that they'll get a share of whatever you find, take +1</li>
+                    </ul>
+                    If you have a useful reputation around these parts take an additional +1.<br>
+                    <a href='/character/{{id}}/recruit' class="btn black">Roll + advantage</a>
+                     </p>
+                </div>
+            </div>
+        </div>
+         <div>
+            <p>OUTSTANDING WARRANTS:<br><a href='/character/{{id}}/{{charisma}}/warrants' class="btn black">Return somewhere you've caused trouble (+CHA)</a></p>
+        </div>
+        <div>
+            <p>BOLSTER:<br>
+            <div class="card black">
+                <div class="card-content white-text">
+                    When you spend your leisure time in study, meditation, or hard practice, you gain preparation. If you prepare for a week or two, 1 preparation. If you prepare for a month or longer, 3 preparation. When your preparation pays offspend 1 preparation for +1 to any roll. You can only spend one preparation per roll.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>UNDERTAKE A PERILOUS JOURNEY:<br> <a href='/character/{{id}}/{{wisdom}}/journey' class='btn black'>Pick trailblazer, scout and quartermaster (+WIS)</a></p>
+        </div>
+        <div>
+            <p>LAST BREATH:<br> <a href='/character/{{id}}/last' class="btn black">When dying see beyond the Black Gates (+0)</a></p>
+        </div>
+        </div>
+    </div>
 </div>
-<div>
-    <h4>PARLEY</h4>
-    <a href='/character/{{id}}/{{charisma}}/parley' >Have leverage on a GM character and manipulate them (+CHA)</a>
-</div>
-<div>
-    <h4>DEFY DANGER</h4>
-    <p>Act despite an imminent threat 
-        <ul>
-            <li><a href='/character/{{id}}/{{strength}}/defy' >by powering through (+STR)</a></li>
-            <li><a href='/character/{{id}}/{{dexterity}}/defy' >by getting out of the way or acting fast (+DEX)</a></li>
-            <li><a href='/character/{{id}}/{{constitution}}/defy' >by enduring (+CON)</a></li>
-            <li><a href='/character/{{id}}/{{intelligence}}/defy' >with quick thinking (+INT)</a></li>
-            <li><a href='/character/{{id}}/{{wisdom}}/defy' >through mental fortitude (+WIS)</a></li>
-            <li><a href='/character/{{id}}/{{charisma}}/defy' >sing charm and social grace (+CHA)</a></li>
-        </ul>
-        
-    </p>
-</div>
-<div>
-    <h4>DEFEND</h4>
-    <p><a href='/character/{{id}}/{{constitution}}/defend' >Stand in defense of a person, item, or location (+CON)</a></p>
-</div>
-<div>
-    <h4>DISCERN REALITIES</h4>
-    <p><a href='/character/{{id}}/{{wisdom}}/discern' >Closely study a situation or person (+WIS)</a></p>
-</div>
-<div>
-    <h4>SPOUT LORE</h4>
-    <p><a href='/character/{{id}}/{{intelligence}}/lore' >Consult your accumulated knowledge about something (+INT)</a></p>
-</div>
-<div>
-    <h4>AID OR INTERFERE</h4>
-    <p><a href='/character/{{id}}/aid' >Help or hinder someone you have a bond with (+BOND)</a></p>
-</div>
-</body>
-</html>
+
+<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
+        })
+      </script>
+
 

@@ -1,10 +1,18 @@
-<h1>Welcome, {{users.name}}</h1>
-<h3>Choose the character you would like to play with today:</h3>
-
-<ul>
-    {{#each characters}}
-    <li><a href='/character/{{id}}' >{{char_name}}</a></li>
-    {{/each}}
-</ul>
-
-<input type="button" value="Create a New Character" onclick="location.href='/profile/{{users.id}}/add'" />
+<h3>Welcome, {{users.name}}</h3>
+<div class="row">
+    <div class="col s5">
+      <h4 class="black white-text">Choose your character</h4>
+      <div>
+        {{#each characters}}
+          <ul class="collection s6">
+            <li class="collection-item black"><a class="white-text" href='/character/{{id}}' >{{char_name}}</a></li>
+          </ul>
+        {{/each}}
+      </div>
+    </div>
+    <div class="col s5 offset-s2">
+      <h4 class="black white-text">New campaign?</h4>
+      <i class="material-icons prefix large">person_add</i>
+      <input class="btn black" value="Create a New Character" onclick="location.href='/profile/{{users.id}}/add'" />
+    </div>
+</div>
