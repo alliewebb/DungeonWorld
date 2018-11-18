@@ -166,13 +166,26 @@
                 </div>
             </div>
         </div>
-    </div>
+    
+        <div>
+            <p>CAROUSE:<br>
+            <div class="card black">
+                <div class="card-content white-text">
+                    <p>When you return triumphant and throw a big party, spend 100 coin and roll + extra 100s coin spent.</p>
+                    <a href='/character/{{id}}/carouse' class="btn black">Roll + 100s coin spent</a>
+                </div>
+            </div>
+        </div>
+        </div>
     <div class="col s6">
         <div>
-            <p>CAROUSE (costs 100 coin. Roll +extra 100s of coins spent):<br><a href='/character/{{id}}/carouse' class="btn black">Return triumphant, throw a party (+COIN)</a></p>
-        </div>
-        <div>
-            <p>SUPPLY:<br><a href='/character/{{id}}/{{charisma}}/supply' class="btn black">Buy something special (+CHA)</a></p>
+            <p>SUPPLY:<br>
+            <div class="card black">
+                <div class="card-content white-text">
+                    <p>When you go to buy something with gold on hand, if it's something readily available in the settlement you're in, you can buy it at market price. If it's something special, beyond what's usually available here, or non-mundane, roll + CHA.</p>
+                    <a href='/character/{{id}}/{{charisma}}/supply' class="btn black">Roll + CHA</a>
+                </div>
+            </div>
         </div>
         <div>
             <p>RECOVER:<br>
@@ -210,7 +223,13 @@
             </div>
         </div>
         <div>
-            <p>UNDERTAKE A PERILOUS JOURNEY:<br> <a href='/character/{{id}}/{{wisdom}}/journey' class='btn black'>Pick trailblazer, scout and quartermaster (+WIS)</a></p>
+            <p>UNDERTAKE A PERILOUS JOURNEY:<br>
+            <div class="card black">
+                <div class="card-content white-text">
+                    <p>When you travel through hostile territory, choose one member of the party to act as trailblazer, one to scout ahead, and one to be quartermaster (the same character cannot have two jobs). If you do not have enough party members or choose not to assign a job, treat that job as if it had rolled a 6. Each character with a job to do rolls +WIS.</p>
+                    <a href='/character/{{id}}/{{wisdom}}/journey' class="btn black">Roll + WIS</a>
+                </div>
+            </div>
         </div>
         <div>
             <p>LAST BREATH:<br> <a href='/character/{{id}}/last' class="btn black">When dying see beyond the Black Gates (+0)</a></p>

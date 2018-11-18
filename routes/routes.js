@@ -112,7 +112,6 @@ router.get('/character/:id/:stat/hack', (req, res) => {
       let roll = db.dieRoll(6)
       let roll2 = db.dieRoll(6)
       let sum = roll + roll2 + mod
-      console.log(mod)
       res.render('hack', {character, id, mod, roll, roll2, sum})
     })
 })
@@ -125,7 +124,6 @@ router.get('/character/:id/:stat/volley', (req, res) => {
       let roll = db.dieRoll(6)
       let roll2 = db.dieRoll(6)
       let sum = roll + roll2 + mod
-      console.log(mod)
       res.render('volley', {character, id, mod, roll, roll2, sum})
     })
 })
@@ -164,7 +162,6 @@ router.get('/character/:id/:stat/defend', (req, res) => {
       let roll = db.dieRoll(6)
       let roll2 = db.dieRoll(6)
       let sum = roll + roll2 + mod
-      console.log(mod)
       res.render('defend', {character, id, mod, roll, roll2, sum})
     })
 })
@@ -177,7 +174,6 @@ router.get('/character/:id/:stat/discern', (req, res) => {
       let roll = db.dieRoll(6)
       let roll2 = db.dieRoll(6)
       let sum = roll + roll2 + mod
-      console.log(mod)
       res.render('discern', {character, id, mod, roll, roll2, sum})
     })
 })
@@ -190,7 +186,6 @@ router.get('/character/:id/:stat/lore', (req, res) => {
       let roll = db.dieRoll(6)
       let roll2 = db.dieRoll(6)
       let sum = roll + roll2 + mod
-      console.log(mod)
       res.render('lore', {character, id, mod, roll, roll2, sum})
     })
 })
@@ -205,4 +200,87 @@ router.get('/character/:id/aid', (req, res) => {
       res.render('aid', {character, id, roll, roll2, sum})
     })
 })
+
+router.get('/character/:id/:stat/warrants', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      let mod = db.findStat(Number(req.params.stat))
+      let roll = db.dieRoll(6)
+      let roll2 = db.dieRoll(6)
+      let sum = roll + roll2 + mod
+      res.render('warrants', {character, id, mod, roll, roll2, sum})
+    })
+})
+
+router.get('/character/:id/last', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      let roll = db.dieRoll(6)
+      let roll2 = db.dieRoll(6)
+      let sum = roll + roll2
+      res.render('last', {character, id, roll, roll2, sum})
+    })
+})
+
+router.get('/character/:id/:stat/watch', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      let mod = db.findStat(Number(req.params.stat))
+      let roll = db.dieRoll(6)
+      let roll2 = db.dieRoll(6)
+      let sum = roll + roll2 + mod
+      res.render('watch', {character, id, mod, roll, roll2, sum})
+    })
+})
+
+router.get('/character/:id/:stat/journey', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      let mod = db.findStat(Number(req.params.stat))
+      let roll = db.dieRoll(6)
+      let roll2 = db.dieRoll(6)
+      let sum = roll + roll2 + mod
+      res.render('journey', {character, id, mod, roll, roll2, sum})
+    })
+})
+
+router.get('/character/:id/carouse', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      let roll = db.dieRoll(6)
+      let roll2 = db.dieRoll(6)
+      let sum = roll + roll2
+      res.render('carouse', {character, id, roll, roll2, sum})
+    })
+})
+
+router.get('/character/:id/:stat/supply', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      let mod = db.findStat(Number(req.params.stat))
+      let roll = db.dieRoll(6)
+      let roll2 = db.dieRoll(6)
+      let sum = roll + roll2 + mod
+      res.render('supply', {character, id, mod, roll, roll2, sum})
+    })
+})
+
+router.get('/character/:id/:stat/recruit', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      let mod = db.findStat(Number(req.params.stat))
+      let roll = db.dieRoll(6)
+      let roll2 = db.dieRoll(6)
+      let sum = roll + roll2 + mod
+      res.render('recruit', {character, id, mod, roll, roll2, sum})
+    })
+})
+
 module.exports = router
