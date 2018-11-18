@@ -1,39 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <title>Add a Character</title>
-</head>
-<body>
-    
-<p>First die roll: {{roll}}<br>
-    Second die roll: {{roll2}}<br>
-    Modifier: {{mod}}</p>
-<p>Your total roll is: <h2>{{sum}}</h2></p>
-
-<h3>10+</h3>
-<p>Ask the GM 3 questions from the list below</p>
-<h3>7-9</h3>
-<p>Ask 1 question from the list below</p>
-<h3>6 and below</h3>
-<p>Mark experience</p> 
-
-<h3>Questions:</h3>
-Take +1 forward when acting on the answers:
-<ul>
-<li>What happened here recently?</li>
-<li>What is about to happen?</li>
-<li>What should I be on the lookout for?</li>
-<li>What here is useful or valuable to me?</li>
-<li>Whos really in control here?</li>
-<li>What here is not what it appears to be?</li>
-</ul>
+ <div class="row">
+    <h4 class="center black white-text">Discern Realities</h4>
+    <div class="col s2">
+      First die roll: <h4>{{roll}} +</h4>
+    </div>
+    <div class="col s2">
+        Second die roll: <h4>{{roll2}} + </h4><br><br>
+        Your total roll: <div class="card"><h1>{{sum}}</h1></div>
+    </div>
+    <div class="col s2">
+        Modifier: <h4>{{mod}}</h4></p>
+    </div>
+    <div class="col s4">
+        <h4 class="black white-text">10+</h4>
+            <p>Ask the GM 3 questions from the list below</p>
+        <h4 class="black white-text">7-9</h4>
+            <p>Ask 1 question from the list below</p>
+        <h4 class="black white-text">6 and below</h4>
+            <p>Mark experience</p> 
+        <h4 class="black white-text">Questions:</h4>
+            Take +1 forward when acting on the answers:
+            <ul>
+                <li>What happened here recently?</li>
+                <li>What is about to happen?</li>
+                <li>What should I be on the lookout for?</li>
+                <li>What here is useful or valuable to me?</li>
+                <li>Whos really in control here?</li>
+                <li>What here is not what it appears to be?</li>
+            </ul>
+    </div>
+</div>  
+<div class="center">
+  <a href="/character/{{id}}/" class="btn black">Character Sheet</a>
+</div>

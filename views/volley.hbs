@@ -1,34 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <title>Add a Character</title>
-</head>
-<body>
-
-<p>Die 1: {{roll}}<br>
-    Die 2: {{roll2}}<br>
-    Modifier: {{mod}}</p>
-<p>Your total roll is: <h2>{{sum}}</h2></p>
-
-<h3>10+</h3>
-<p>You have a clear shot. Deal your damage</p>
-<h3>7-9</h3>
-<p>Choose one of the following:
-    <ul>
-        <li>You have to move to get the shot placing you in danger of the GM's choice</li>
-        <li>You have to take what you can get: -1d6 damage</li>
-        <li>You have to take several shots, reducing your ammo by one</li>
-    </ul>
-</p>
-<h3>6 and below</h3>
-<p>Attack fails, mark experience</p>
+<div class="row">
+  <h4 class="center black white-text">Volley</h4>
+  <div class="col s2">
+      First die roll: <h4>{{roll}} +</h4>
+  </div>
+  <div class="col s2">
+      Second die roll: <h4>{{roll2}} + </h4><br><br>
+      Your total roll: <div class="card"><h1>{{sum}}</h1></div>
+  </div>
+  <div class="col s2">
+      Modifier: <h4>{{mod}}</h4></p>
+  </div>
+  <div class="col s4">
+    <h4 class="black white-text">10+</h4>
+        <p>You have a clear shot. Deal your damage</p>
+    <h4 class="black white-text">7-9</h4>
+        <p>Choose one of the following:
+            <ul>
+                <li>You have to move to get the shot placing you in danger of the GM's choice</li>
+                <li>You have to take what you can get: -1d6 damage</li>
+                <li>You have to take several shots, reducing your ammo by one</li>
+            </ul>
+        </p>
+    <h4 class="black white-text">6 and below</h4>
+        <p>Attack fails, mark experience</p>
+  </div>
+</div>  
+<div class="center">
+  <a href="/character/{{id}}/" class="btn black">Character Sheet</a>
+</div>

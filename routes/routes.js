@@ -49,7 +49,7 @@ router.post('/character/:id', (req, res) => {
     class: req.body.class,
     level: req.body.level,
     xp: req.body.xp,
-    hp: req.body.HP,
+    hp: req.body.hp,
     items: req.body.items,
     bonds: req.body.bonds,
     alignment: req.body.alignment,
@@ -137,7 +137,7 @@ router.get('/character/:id/:stat/parley', (req, res) => {
       let roll2 = db.dieRoll(6)
       let sum = roll + roll2 + mod
       console.log(mod)
-      res.render('volley', {character, id, mod, roll, roll2, sum})
+      res.render('parley', {character, id, mod, roll, roll2, sum})
     })
 })
 
