@@ -271,15 +271,14 @@ router.get('/character/:id/:stat/supply', (req, res) => {
     })
 })
 
-router.get('/character/:id/:stat/recruit', (req, res) => {
+router.get('/character/:id/recruit', (req, res) => {
   let id = (Number(req.params.id))
   db.getCharacter(id)
     .then(character => {
-      let mod = db.findStat(Number(req.params.stat))
       let roll = db.dieRoll(6)
       let roll2 = db.dieRoll(6)
-      let sum = roll + roll2 + mod
-      res.render('recruit', {character, id, mod, roll, roll2, sum})
+      let sum = roll + roll2
+      res.render('recruit', {character, id, roll, roll2, sum})
     })
 })
 
