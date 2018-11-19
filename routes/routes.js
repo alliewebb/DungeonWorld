@@ -61,11 +61,12 @@ router.post('/character/:id', (req, res) => {
     intelligence: req.body.intelligence,
     wisdom: req.body.wisdom,
     charisma: req.body.charisma,
-    race: req.body.race
+    race: req.body.race,
+    notes: req.body.notes
   }
   db.updateCharacter(req.params.id, character)
     .then(() => {
-      res.redirect('/')
+      res.redirect('back')
     })
 })
 
@@ -279,6 +280,24 @@ router.get('/character/:id/recruit', (req, res) => {
       let roll2 = db.dieRoll(6)
       let sum = roll + roll2
       res.render('recruit', {character, id, roll, roll2, sum})
+    })
+})
+
+router.get('/character/:id/notes', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      res.render('notes', character[0])
+    })
+})
+
+router.post('/character/:id/notes', (req, res) => {
+  const character = {
+    notes: req.body.notes
+  }
+  db.updateCharacter(req.params.id, character)
+    .then(() => {
+      res.redirect('back')
     })
 })
 

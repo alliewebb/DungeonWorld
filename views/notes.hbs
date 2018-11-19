@@ -1,0 +1,17 @@
+ <div class="row">
+    <h4 class="center black white-text">Notes</h4>
+    <p class="center black white-text">
+        A page to keep notes of your character's look, backstory, and any campaign details you want to note down.
+    </p>
+    <form name='initial' action='/character/{{id}}/notes' method='POST'>
+    <div class="input-field">
+          <textarea id="notes" name = "notes" class="materialize-textarea">{{notes}}</textarea>
+          <label for="bonds">Notes:</label>
+    </div>  
+    <div class="center">
+        <input method="POST" class="btn black" type="submit" value="Save Changes"/>
+        <a href="/character/{{id}}/" class="btn black">Character Sheet</a>
+    </div>
+    </form>
+</div>
+  

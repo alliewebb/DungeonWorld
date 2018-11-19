@@ -1,8 +1,9 @@
 <h3 class="center black white-text">Character Sheet</h3>
+<h5 class="center black white-text">{{char_name}} the {{class}}</h5>
 
 <form name='initial' action='/character/{{id}}' method='POST'>
 <div class="row">
-    <div class="col s4">
+    <div class="col s3">
         <div>
             <label for="hp">HP  (Max HP CON + 8):</label><br>
             <input type="integer" id="hp" name="hp" value="{{hp}}"/>
@@ -28,7 +29,7 @@
             <input type="integer" id="race" name="race" value="{{race}}"/>
         </div>
     </div>
-    <div class="col s4">
+    <div class="col s3">
         <div>
             <label for="strength">Strength:</label><br>
             <input type="integer" id="strength" name="strength" value="{{strength}}"/>
@@ -54,11 +55,7 @@
             <input type="integer" id="charisma" name="charisma" value="{{charisma}}"/>
         </div>
     </div>
-    <div class="col s4">
-        <div class="input-field">
-          <textarea id="items" name="items" class="materialize-textarea" >{{items}}</textarea>
-          <label for="items">Items and Load:</label>
-        </div>
+    <div class="col s3">
         <div class="input-field">
           <textarea id="bonds" name = "bonds" class="materialize-textarea">{{bonds}}</textarea>
           <label for="bonds">Bonds:</label>
@@ -68,9 +65,16 @@
           <label for="alignment">Alignment:</label>
         </div>
     </div>
+    <div class="col s3">
+        <div class="input-field">
+          <textarea id="items" name="items" class="materialize-textarea" >{{items}}</textarea>
+          <label for="items">Items and Load:</label>
+        </div>
+    </div>
 </div>
 <div class="center">
-    <input class="btn black" type="submit"value="Save Changes"/>
+    <input class="btn black" type="submit" value="Save Changes"/>
+    <a href="/character/{{id}}/notes" class="btn black">Notes</a>
     <a href="/character/{{id}}/delete" class="btn black">Delete Character</a>
 </div>
 </form>

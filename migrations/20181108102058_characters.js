@@ -22,6 +22,7 @@ exports.up = function (knex, Promise) {
     table.integer('charisma')
     table.string('items')
     table.string('bonds')
+    table.string('notes')
   })
 }
 
