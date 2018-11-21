@@ -72,11 +72,15 @@
         </div>
     </div>
 </div>
-<div class="center">
+<div class="row">
+<div class="col s11 center">
     <input class="btn black" type="submit" value="Save Changes"/>
     <a href="/character/{{id}}/notes" class="btn black">Notes</a>
     <a href="/character/{{id}}/roll" class="btn black">Roll</a>
+</div>
+<div class="col s1 right">
     <a href="/character/{{id}}/delete" class="btn red darken-4"><i class="material-icons">delete_forever</i></a>
+</div>
 </div>
 </form>
 
@@ -267,5 +271,4 @@
         var instances = M.FormSelect.init(elems, options);
         })
       </script>
-
 
