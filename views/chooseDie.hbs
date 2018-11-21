@@ -1,0 +1,68 @@
+<div class="row">
+  <h4 class="center black white-text">Roll the die</h4>
+  <p class="center black white-text">Your default damage is {{damage}}</p>
+  <br>
+    <form action="/character/{{id}}/roll" method="POST">
+      <div class="col s1 center offset-s3">
+      <p>
+      <label>
+        <input type="number" id="d4" name="d4"
+       min="0" max="10">
+        <span class="black-text">D4</span>
+      </label>
+      </p>
+      </div>
+      <div class="col s1 center">
+      <p>
+      <label>
+        <input type="number" id="d6" name="d6"
+       min="0" max="10">
+        <span class="black-text">D6</span>
+      </label>
+      </p>
+      </div>
+      <div class="col s1 center">
+      <p>
+      <label>
+        <input type="number" id="d8" name="d8"
+       min="0" max="10">
+        <span class="black-text">D8</span>
+      </label>
+      </p>
+      </div>
+      <div class="col s1 center">
+      <p>
+      <label>
+        <input type="number" id="d10" name="d10"
+       min="0" max="10">
+        <span class="black-text">D10</span>
+      </label>
+      </p>
+      </div>
+      <div class="col s1 center">
+      <p>
+      <label>
+        <input type="number" id="d12" name="d12"
+       min="0" max="10">
+        <span class="black-text">D12</span>
+      </label>
+      </p>
+      </div>
+      <div class="col s1 center">
+      <p>
+      <label>
+        <input type="number" id="d20" name="d20"
+       min="0" max="10">
+        <span class="black-text">D20</span>
+      </label>
+      </p>
+    </div>
+  </form>
+</div>  
+</div>
+<div class="row center">
+<a href="/character/{{id}}/result" class="btn black">Roll</a>
+<br>
+<br>
+  <a href="/character/{{id}}/" class="btn black">Character Sheet</a>
+</div>

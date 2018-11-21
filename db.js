@@ -56,7 +56,7 @@ function findStat (stat) {
     mod = 1
   } else if (stat >= 9) {
     mod = 0
-  } else if (stat = 8) {
+  } else if (stat == 8) {
     mod = -1
   }
   return mod

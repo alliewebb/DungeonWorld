@@ -4,6 +4,10 @@ const db = require('../db')
 
 const router = express.Router()
 
+// router.get('/', (req, res) => {
+//   res.send('home')
+// })
+
 router.get('/', (req, res) => {
   db.getUsers()
     .then(users => {
@@ -298,6 +302,16 @@ router.post('/character/:id/notes', (req, res) => {
   db.updateCharacter(req.params.id, character)
     .then(() => {
       res.redirect('back')
+    })
+})
+
+router.get('/character/:id/roll', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      let die = (Number(character[0].damage))
+      let roll = db.dieRoll(die)
+      res.render('roll', {character, id, roll})
     })
 })
 
