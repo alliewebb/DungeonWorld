@@ -315,4 +315,12 @@ router.get('/character/:id/roll', (req, res) => {
     })
 })
 
+router.get('/character/:id/barbarian', (req, res) => {
+  let id = (Number(req.params.id))
+  db.getCharacter(id)
+    .then(character => {
+      res.render('barbarian', character)
+    })
+})
+
 module.exports = router
