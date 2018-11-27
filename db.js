@@ -50,7 +50,9 @@ function deleteCharacter (id, db = connection) {
 
 let mod = 0
 function findStat (stat) {
-  if (stat >= 16) {
+  if (stat >= 18) {
+    mod = 3
+  } else if (stat >= 16) {
     mod = 2
   } else if (stat >= 13) {
     mod = 1
