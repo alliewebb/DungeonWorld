@@ -319,7 +319,7 @@ router.get('/character/:id/barbarian', (req, res) => {
   let id = (Number(req.params.id))
   db.getCharacter(id)
     .then(character => {
-      res.render('barbarian', character)
+      res.render('barbarian', {character, id})
     })
 })
 
